@@ -10,6 +10,10 @@ type LRUCache struct {
 }
 
 func Constructor(capacity int) LRUCache {
+	if capacity < 0 {
+		capacity = 0
+	}
+
 	return LRUCache{
 		capacity:  capacity,
 		cache:     make(map[int]int),
